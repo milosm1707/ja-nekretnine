@@ -37,14 +37,14 @@ Produkcija: [janekretnine.com](https://janekretnine.com)
 ├── zgrade-sve.php              # lista svih zgrada
 ├── contact.php                 # obrada kontakt forme
 ├── api/                        # javni JSON API (nekretnine, zgrade, detalji, dostupnost, upit)
-├── admin-nekretnine-x7f2k9m/   # admin panel
+├── admin/                      # admin panel (na serveru preimenovati, vidi Deploy)
 ├── config/
 │   ├── config.example.php      # šablon konfiguracije (commitovan)
 │   ├── config.php              # prava konfiguracija (NIJE u gitu)
 │   └── database.php            # PDO konekcija
 ├── includes/                   # auth, CSRF, upload i pomoćne funkcije
 ├── phpmailer/                  # PHPMailer biblioteka
-├── setup/                      # jednokratne skripte (kreiranje admina, demo podaci)
+├── setup/create-admin.php      # jednokratno kreiranje admin naloga
 ├── database/schema.sql         # šema baze bez podataka
 ├── uploads/                    # slike, video i dokumenti (NIJE u gitu)
 ├── css/  js/  images/
@@ -71,8 +71,7 @@ Produkcija: [janekretnine.com](https://janekretnine.com)
    php -S localhost:8000
    ```
 5. Otvori `http://localhost:8000/setup/create-admin.php` i napravi admin nalog.
-   Opcionalno, `setup/seed-demo-podaci.php` ubacuje demo nekretnine.
-6. Admin panel: `http://localhost:8000/admin-nekretnine-x7f2k9m/login.php`
+6. Admin panel: `http://localhost:8000/admin/login.php`
 
 ## Deploy na Hostinger
 
@@ -80,6 +79,7 @@ Produkcija: [janekretnine.com](https://janekretnine.com)
 2. Na serveru napravi `config/config.php` sa produkcionim podacima. Taj fajl se ne nalazi u repozitorijumu.
 3. Uvezi `database/schema.sql` kroz phpMyAdmin (samo za novu instalaciju).
 4. Posle kreiranja admin naloga obriši folder `setup/` sa servera.
+5. Preimenuj folder `admin/` na serveru u nasumično ime (npr. `panel-k3x9q`) i to ime nikome ne objavljuj. Glavna zaštita je prijava, a ovo je dodatni sloj.
 
 ## Bezbednost
 
