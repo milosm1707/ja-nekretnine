@@ -1,0 +1,20 @@
+# --- Tajni podaci (lozinke baze i SMTP-a) ---
+config/config.php
+
+# --- Fajlovi koje uploaduju korisnici kroz admin panel ---
+uploads/**
+!uploads/**/
+!uploads/**/.gitkeep
+!uploads/**/.htaccess
+
+# --- Dumpovi baze sa pravim podacima ---
+*.sql
+!database/schema.sql
+
+# --- Logovi i sistemski fajlovi ---
+error_log
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
